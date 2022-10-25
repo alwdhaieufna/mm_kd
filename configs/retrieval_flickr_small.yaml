@@ -1,0 +1,35 @@
+image_root: '/data/BLIP/flickr30k_images/'
+ann_root: 'annotation'
+dataset: 'flickr'
+
+# set pretrained as a file path or an url
+pretrained: 'https://storage.googleapis.com/sfr-vision-language-research/BLIP/models/model_base.pth'
+#pretrained: 'output/retrieval_flickr6/checkpoint_best.pth'
+# size of vit model; base or large
+
+vit: 'small'
+batch_size_train: 32
+batch_size_test: 64
+vit_grad_ckpt: True
+vit_ckpt_layer: 0
+init_lr: 1e-4
+med_config: 'configs/small_config.json'
+
+# vit: 'large'
+# batch_size_train: 16
+# batch_size_test: 32
+# vit_grad_ckpt: True
+# vit_ckpt_layer: 10
+# init_lr: 5e-6
+
+image_size: 384
+queue_size: 57600
+alpha: 0.4
+k_test: 128
+negative_all_rank: False
+
+# optimizer
+weight_decay: 0.05
+min_lr: 0
+max_epoch: 30
+
